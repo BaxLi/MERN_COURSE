@@ -1,10 +1,11 @@
 const express = require('express')
-const app = express()
+
 const config = require('config')
 const cool = require('cool-ascii-faces')
-const PORT = config.get('port') || 5000
+
 const mongoose = require('mongoose')
 const path = require('path')
+const app = express()
 
 // @ts-ignore
 app.use(express.json({ extended: true }))
@@ -20,7 +21,7 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   })
 }
-
+const PORT = config.get('port') || 5000
 async function start() {
   try {
     await mongoose.connect(config.get('mongoUri'), {
