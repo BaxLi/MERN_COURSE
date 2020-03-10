@@ -1,8 +1,6 @@
 const express = require('express')
-
 const config = require('config')
 const cool = require('cool-ascii-faces')
-
 const mongoose = require('mongoose')
 const path = require('path')
 const app = express()
@@ -22,6 +20,8 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 const PORT = config.get('port') || 5000
+console.log("config.get('port')=",config.get('port'));
+
 async function start() {
   try {
     await mongoose.connect(config.get('mongoUri'), {
