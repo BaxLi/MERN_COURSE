@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const config = require('config')
-
+const cool = require('cool-ascii-faces')
 const PORT = config.get('port') || 5000
 const mongoose = require('mongoose')
 const path = require('path')
@@ -12,6 +12,7 @@ app.use(express.json({ extended: true }))
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/link', require('./routes/link.routes'))
 app.use('/t', require('./routes/redirect.routes'))
+app.use('/cool', (req, res) => res.send(cool()))
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname, 'client', 'build')))
