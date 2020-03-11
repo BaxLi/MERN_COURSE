@@ -1,6 +1,6 @@
 {
-    "port":80,
+    "port":8080,
     "mongoUri":"mongodb+srv://BaxLi:Qwer1234@cluster0-wtpgv.mongodb.net/app?retryWrites=true&w=majority",
     "jwtsecret":"ourSecretKeyforWebToken",
-    "baseUrl":"http://localhost:5000"
+    "baseUrl":"http://testzone.xyz"
 }
