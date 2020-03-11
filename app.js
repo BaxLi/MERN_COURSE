@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 const PORT = config.get('port') || 5000
-console.log("config.get('port')=",config.get('port'));
+console.log("config.get('port')=", config.get('port'));
 
 async function start() {
   try {
@@ -31,7 +31,7 @@ async function start() {
     })
     app.listen(PORT, () => console.log(`aPP started on port ${PORT} !`))
   } catch (error) {
-    console.log('server db error')
+    console.log('server db error, ->', error )
     process.exit(1)
   }
 }
