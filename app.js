@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 
 //-------- for HEROKU deployment --------------------------------------------------
 const PORT = process.env.PORT
-console.log("config.get('port')=", process.env.PORT );
+console.log("config.get('port')=", process.env.PORT )
 //---------------------------------------------------------------------------------
 
 async function start() {
