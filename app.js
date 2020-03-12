@@ -19,8 +19,13 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   })
 }
-const PORT = config.get('port') || 5000
-console.log("config.get('port')=", config.get('port'));
+// const PORT = config.get('port') || 5000
+// console.log("config.get('port')=", config.get('port'));
+
+//-------- for HEROKU deployment --------------------------------------------------
+const PORT = process.env.PORT
+console.log("config.get('port')=", process.env.PORT );
+//---------------------------------------------------------------------------------
 
 async function start() {
   try {
